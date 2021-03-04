@@ -9,24 +9,24 @@ struct Vector2Array
             return x.Size();
         
         else
-            ThrowAbortException("Vector2 array: size of component arrays mismatch");
+            object.ThrowAbortException("Vector2 array: size of component arrays mismatch");
         
         return 0;
     }
 
-    void Copy(Vector_2_array vec_arr)
+    void Copy(Vector2Array vec_arr)
     {
         x.Copy(vec_arr.x);
         y.Copy(vec_arr.y);
     }
 
-    void Move(Vector_2_array vec_arr)
+    void Move(Vector2Array vec_arr)
     {
         x.Move(vec_arr.x);
         y.Move(vec_arr.y);
     }
 
-    void Append(Vector_2_array vec_arr)
+    void Append(Vector2Array vec_arr)
     {
         x.Append(vec_arr.x);
         y.Append(vec_arr.y);
@@ -50,7 +50,7 @@ struct Vector2Array
             }
         }
         else
-            ThrowAbortException("Vector2 array: size of component arrays mismatch");
+            object.ThrowAbortException("Vector2 array: size of component arrays mismatch");
 
         return x.Size();
     }
@@ -61,7 +61,7 @@ struct Vector2Array
         y.Push(vec.y);
 
         if(x.Size() != y.Size() )
-            ThrowAbortException("Vector2 array: size of component arrays mismatch");
+            object.ThrowAbortException("Vector2 array: size of component arrays mismatch");
         
         return x.Size();
     }
@@ -75,7 +75,7 @@ struct Vector2Array
             return x_res;
         
         else
-            ThrowAbortException("Vector3 array: return values dont match");
+            object.ThrowAbortException("Vector3 array: return values dont match");
 
         return false;
     }
@@ -88,7 +88,7 @@ struct Vector2Array
             y.Delete(index, deletecount);
         }
         else
-            ThrowAbortException("Vector2 array: index outside of array bounds");
+            object.ThrowAbortException("Vector2 array: index outside of array bounds");
     }
 
     void Insert(uint index, vector2 vec)
@@ -124,7 +124,7 @@ struct Vector2Array
             return x_res;
 
         else
-            ThrowAbortException("Vector2 array: return values dont match");
+            object.ThrowAbortException("Vector2 array: return values dont match");
         
         return 0;    
     }
@@ -138,7 +138,7 @@ struct Vector2Array
             return x_res;
         
         else
-            ThrowAbortException("Vector2 array: allocated entries of component arrays mismatch");
+            object.ThrowAbortException("Vector2 array: allocated entries of component arrays mismatch");
     
         return 0;
     }
@@ -154,7 +154,7 @@ struct Vector2Array
         if(index > -1 && index < x.Size() && index < y.Size() )
             return (x[index], y[index]);
         else
-            ThrowAbortException("Vector2 array: index outside of array bound");
+            object.ThrowAbortException("Vector2 array: index outside of array bound");
 
         return (0, 0);
     }
@@ -173,26 +173,26 @@ struct Vector3Array
         if(x.Size() == y.Size() == z.Size() )
             return x.Size();
         else
-            ThrowAbortException("Vector3 array: size of component arrays mismatch");
+            object.ThrowAbortException("Vector3 array: size of component arrays mismatch");
     
         return 0;
     }
 
-    void Copy(Vector_3_array vec_arr)
+    void Copy(Vector3Array vec_arr)
     {
         x.Copy(vec_arr.x);
         y.Copy(vec_arr.y);
         z.Copy(vec_arr.z);
     }
 
-    void Move(Vector_3_array vec_arr)
+    void Move(Vector3Array vec_arr)
     {
         x.Move(vec_arr.x);
         y.Move(vec_arr.y);
         z.Move(vec_arr.z);
     }
 
-    void Append(Vector_3_array vec_arr)
+    void Append(Vector3Array vec_arr)
     {
         x.Append(vec_arr.x);
         y.Append(vec_arr.y);
@@ -219,7 +219,7 @@ struct Vector3Array
             }
         }
         else
-            ThrowAbortException("Vector3 array: size of component arrays mismatch");
+            object.ThrowAbortException("Vector3 array: size of component arrays mismatch");
 
         return x.Size();
     }
@@ -231,7 +231,7 @@ struct Vector3Array
         z.Push(vec.z);
 
         if(x.Size() != y.Size() || x.Size() != z.Size() || y.Size() != z.Size() )
-            ThrowAbortException("Vector3 array: size of component arrays mismatch");
+            object.ThrowAbortException("Vector3 array: size of component arrays mismatch");
         
         return x.Size();
     }
@@ -246,7 +246,7 @@ struct Vector3Array
             return x_res;
 
         else
-            ThrowAbortException("Vector3 array: size of component arrays mismatch");
+            object.ThrowAbortException("Vector3 array: size of component arrays mismatch");
 
         return false;
     }
@@ -259,7 +259,7 @@ struct Vector3Array
             y.Delete(index, deletecount);
         }
         else
-            ThrowAbortException("Vector3 array: index outside of array bounds");
+            object.ThrowAbortException("Vector3 array: index outside of array bounds");
     }
 
     void Insert(uint index, vector3 vec)
@@ -300,7 +300,7 @@ struct Vector3Array
             return x_res;
 
         else
-            ThrowAbortException("Vector3 array: return values dont match");
+            object.ThrowAbortException("Vector3 array: return values dont match");
         
         return 0;    
     }
@@ -315,7 +315,7 @@ struct Vector3Array
             return x_res;
         
         else
-            ThrowAbortException("Vector3 array: allocated entries of component arrays mismatch");
+            object.ThrowAbortException("Vector3 array: allocated entries of component arrays mismatch");
     
         return 0;
     }
@@ -332,7 +332,7 @@ struct Vector3Array
         if(index > -1 && index < x.Size() && index < y.Size() && index < z.Size() )
             return (x[index], y[index], z[index]);
         else
-            ThrowAbortException("Vector3 array: index outside of array bound");
+            object.ThrowAbortException("Vector3 array: index outside of array bound");
 
         return (0, 0, 0);
     }
